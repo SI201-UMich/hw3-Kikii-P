@@ -1,4 +1,4 @@
-# Name: Kikii Park(Jiseon Park)
+# Name: Kikii Park (Jiseon Park)
 # Student ID: 36180469
 # Email: parkpark@umich.edu
 # Who or what you worked with on this homework (including generative AI like ChatGPT):
@@ -78,7 +78,7 @@ class CouponDispenser:
             return self.issued_indices[name_index]
         else:
             self.customer_roster.append(name)
-            name_index = self.issued_indices.ranint(0:len(self.issued_indices)-1)
+            name_index = self.issued_indices.ranint(0,len(self.issued_indices)-1)
             return self.issued_indices[name_index]
 
 
