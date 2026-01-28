@@ -1,6 +1,6 @@
-# Name:
-# Student ID:
-# Email:
+# Name: Kikii Park (Jiseon Park)
+# Student ID: 36180469
+# Email: parkpark@umich.edu
 # Who or what you worked with on this homework (including generative AI like ChatGPT):
 # If you worked with generative AI also add a statement for how you used it.
 # e.g.:
@@ -33,7 +33,11 @@ class CouponDispenser:
             coupon_cards (list[str]): list of possible coupons users can receive.
         """
         # TODO: Implement per instructions
-        pass
+        self.coupon_cards = coupon_cards
+        self.customer_roster = []
+        self.issued_indices = []
+
+        
 
     def __str__(self):
         """
@@ -44,7 +48,13 @@ class CouponDispenser:
             str
         """
         # TODO: Implement per instructions
-        pass
+        if self.coupon_cards == []:
+            return ""
+        return f"{"|".join(self.coupon_cards)}"
+
+
+
+
 
     def issue_coupon(self, name):
         """
@@ -61,7 +71,18 @@ class CouponDispenser:
             str: message as described above
         """
         # TODO: Implement per instructions
-        pass
+        if self.coupon_cards == []:
+            return "The box is empty"
+        if name in self.customer_roster:
+            name_index = self.customer_roster.index(name)
+            return self.issued_indices[name_index]
+        else:
+            self.customer_roster.append(name)
+            name_index = self.issued_indices.ranint(0,len(self.issued_indices)-1)
+            return self.issued_indices[name_index]
+
+
+
 
     def distribute_session(self):
         """
@@ -79,7 +100,23 @@ class CouponDispenser:
         Reminder: Use lists only (no dictionaries).
         """
         # TODO: Implement per instructions 
-        pass
+        is_looping = True
+        round_number = 1
+        while is_looping:
+            user_input = input(f"Round {round_number} - Enter a name(or a comma-separated list), or type 'show' or 'exit': ")
+            if user_input == "exit":
+                print("Goodbye!")
+                is_looping = False
+                break
+            elif user_input == "show":
+                for name in self.customer_roster:
+                    print (f"{name} : {issue_coupon(name)}\n")
+                
+
+
+
+
+        name_input = input("Round <round_number> - Enter a name(or a comma-separated list), or type 'show' or 'exit': ")
 
     def tally_distribution(self):
         """
