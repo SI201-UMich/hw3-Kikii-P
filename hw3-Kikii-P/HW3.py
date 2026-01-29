@@ -153,7 +153,9 @@ class CouponDispenser:
         """
         # TODO: Implement per instructions
         if self.issued_indices == []:
-            return 
+            print ("Empty")
+            return None
+        
 
 
 
