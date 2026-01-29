@@ -111,14 +111,15 @@ class CouponDispenser:
         is_looping = True
         round_number = 1
         while is_looping:
-            user_input = input(f"Round {round_number} - Enter a name(or a comma-separated list), or type 'show' or 'exit': ")
+            user_input = input(f"Round {round_number} - Enter a name (or a comma-separated list), or type 'show' or 'exit': ")
             if user_input == "exit":
                 print("Goodbye!")
                 is_looping = False
                 break
             elif user_input == "show":
                 for name in self.customer_roster:
-                    print (f"{name} : {self.issue_coupon(name)}\n")
+                    print (f"{name}: {self.issue_coupon(name)}\n")
+                round_number += 1
 
             else:
                 pieces = user_input.split(",")
@@ -128,10 +129,7 @@ class CouponDispenser:
                         print(self.issue_coupon(stripped_piece))
                     else : 
                         continue
-
-
-
-            round_number += 1
+                round_number += 1
                 
 
 
@@ -191,8 +189,7 @@ def main():
     ]
 
     # Uncomment the lines below as you implement each function.
-    box = CouponDispenser(coupon_cards)
-    
+    box = CouponDispenser(coupon_cards)   
     box.distribute_session()
     box.tally_distribution()
     
