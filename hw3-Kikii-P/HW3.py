@@ -1,12 +1,16 @@
 # Name: Kikii Park (Jiseon Park)
 # Student ID: 36180469
 # Email: parkpark@umich.edu
-# Who or what you worked with on this homework (including generative AI like ChatGPT):
+# Who or what you worked with on this homework (including generative AI like ChatGPT): Read geeks for geeks website about index method and count function of python
+# https://www.geeksforgeeks.org/python/python-list-index/
+# https://www.geeksforgeeks.org/python/python-list-count-method/
+
+
 # If you worked with generative AI also add a statement for how you used it.
-# e.g.:
-# Asked ChatGPT hints for debugging and suggesting the general structure of the code
 # Did your use of GenAI on this assignment align with your goals and guidelines in 
 #    your Gen AI contract? If not, why?
+# yes it aligns with my goal as I did not ask for answers to Gen AI. 
+# When I was stuck, I tried to find related python material in websites like geeks for geeks, w3schools and apply them on my own
 
 import random
 import io
