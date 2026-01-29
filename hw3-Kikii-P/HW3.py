@@ -155,6 +155,16 @@ class CouponDispenser:
         if self.issued_indices == []:
             print ("Empty")
             return None
+        else : 
+            coupon_count = 0
+            for coupon in self.coupon_cards:
+                coupon_index_in_card = self.coupon_cards.index(coupon)
+                sum = self.issued_indices.count(coupon_index_in_card)
+                coupon_count = sum
+                print(f"{coupon} distribution count: {coupon_count}.")
+
+
+                
         
 
 
@@ -462,5 +472,5 @@ def test():
 
 if __name__ == "__main__":
     main()
-    # test()
+    test()
 
