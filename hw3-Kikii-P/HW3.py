@@ -78,7 +78,10 @@ class CouponDispenser:
         if name in self.customer_roster:
             customer_index = self.customer_roster.index(name)
             coupon_index = self.issued_indices[customer_index]
-            return self.coupon_cards[coupon_index]
+
+            return f"That name already has a coupon: {self.coupon_cards[coupon_index]}"
+        
+
         else :
             coupon_index = random.randint(0,(len(self.coupon_cards) - 1))
             self.customer_roster.append(name)
