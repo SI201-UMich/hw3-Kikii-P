@@ -71,15 +71,20 @@ class CouponDispenser:
             str: message as described above
         """
         # TODO: Implement per instructions
+        coupon_index = None
         if self.coupon_cards == []:
             return "The box is empty"
+        
         if name in self.customer_roster:
-            name_index = self.customer_roster.index(name)
-            return self.issued_indices[name_index]
-        else:
+            customer_index = self.customer_roster.index(name)
+            coupon_index = self.issued_indices[customer_index]
+            return self.coupon_cards[coupon_index]
+        else :
+            coupon_index = random.randint(0,(len(self.coupon_cards) - 1))
             self.customer_roster.append(name)
-            name_index = random.randint(0,len(self.issued_indices)-1)
-            return self.issued_indices[name_index]
+            self.issued_indices.append(coupon_index)
+            return self.coupon_cards[coupon_index]
+
 
 
 
@@ -111,13 +116,15 @@ class CouponDispenser:
             elif user_input == "show":
                 for name in self.customer_roster:
                     print (f"{name} : {self.issue_coupon(name)}\n")
-            else :
+
+            else:
                 pieces = user_input.split(",")
                 for piece in pieces:
                     stripped_piece = piece.strip()
-                    if stripped_piece == "":
-                        break
-                    self.issue_coupon(stripped_piece)
+                    if stripped_piece != "":
+                        print(self.issue_coupon(stripped_piece))
+                    else : 
+                        continue
 
 
 
@@ -145,7 +152,11 @@ class CouponDispenser:
             None
         """
         # TODO: Implement per instructions
-      
+        if self.issued_indices == []:
+            return 
+
+
+
 
 
 
