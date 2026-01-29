@@ -73,7 +73,7 @@ class CouponDispenser:
         # TODO: Implement per instructions
         coupon_index = None
         if self.coupon_cards == []:
-            return "The box is empty"
+            return "The box is empty."
         
         if name in self.customer_roster:
             customer_index = self.customer_roster.index(name)
