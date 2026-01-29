@@ -118,7 +118,9 @@ class CouponDispenser:
                 break
             elif user_input == "show":
                 for name in self.customer_roster:
-                    print (f"{name}: {self.issue_coupon(name)}\n")
+                    index1 = self.customer_roster.index(name)
+                    coupon_index1 = self.issued_indices[index1]
+                    print (f"{name}: {self.coupon_cards[coupon_index1]}\n")
                 round_number += 1
 
             else:
